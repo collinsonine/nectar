@@ -6,7 +6,9 @@ import 'package:nectar/classes/colors.dart';
 import 'package:nectar/main.dart';
 
 class ShopPage extends StatefulWidget {
-  ShopPage({super.key});
+  final String email;
+
+  ShopPage({super.key, required this.email});
   final colors = MyColors();
   @override
   State<ShopPage> createState() => _ShopPageState();
@@ -80,17 +82,17 @@ class _ShopPageState extends State<ShopPage> {
             ),
             Container(
               alignment: Alignment.center,
-              padding: const EdgeInsets.only(left: 120, right: 20),
-              child: const ListTile(
+              padding: const EdgeInsets.only(left: 80, right: 20),
+              child: ListTile(
                 minLeadingWidth: 1,
                 minVerticalPadding: 1,
-                leading: Icon(
+                leading: const Icon(
                   IconlyLight.user,
                   color: Colors.black,
                 ),
                 title: Text(
-                  'Your Email',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  widget.email,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
             ),

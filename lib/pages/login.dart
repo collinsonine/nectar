@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 final _formKey = GlobalKey<FormState>();
+final TextEditingController email = TextEditingController();
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
@@ -42,6 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
                 padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
                 child: TextFormField(
+                  controller: email,
                   decoration: const InputDecoration(
                     contentPadding: EdgeInsets.all(20),
                     prefixIcon: Padding(
